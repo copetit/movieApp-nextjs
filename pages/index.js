@@ -52,7 +52,7 @@ export default function Home({ results }) {
 
 export async function getServerSideProps() {
   const { results } = await (
-    await fetch("http://localhost:3001/api/movies")
+    await fetch("http://localhost:3030/api/movies")
   ).json();
   return {
     props: {
