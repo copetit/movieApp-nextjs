@@ -7,12 +7,20 @@ export default function Detail({ params }) {
   // console.log(router);
   const [title, id] = params || [];
   const [movie, setMovie] = useState("");
+  const [images, setImages] = useState("");
 
   useEffect(() => {
+    // get Movie Info
     (async () => {
-      const res = await (await fetch(`/api/movies/${id}`)).json();
-      console.log(res);
-      setMovie(res);
+      const movieRes = await (await fetch(`/api/movies/${id}`)).json();
+      console.log(movieRes);
+      setMovie(movieRes);
+    })();
+    // get Images
+    (async () => {
+      const res = await (await fetch(`/api/movies/images/${id}`)).json();
+      const images = res.backdrops.filter((data) => data.iso_639_1 == null);
+      setImages(images);
     })();
   }, [id]);
 
@@ -24,26 +32,41 @@ export default function Detail({ params }) {
       />
       <Seo title={title} />
       {movie && (
-        <div className="movie">
-          <div className="poster">
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
-          </div>
-          <div className="detail">
-            <div className="info">
-              <div className="score">⭐️ {movie.vote_average}</div>
-              <h1 className="title">{title}</h1>
-              <div className="release-date">
-                {movie.release_date.slice(0, 4)}
-              </div>
-              <ul className="genres">
-                {movie.genres.map((genre) => (
-                  <li key={genre.id}>{genre.name}</li>
-                ))}
-              </ul>
+        <>
+          <div className="movie">
+            <div className="poster">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              />
             </div>
-            <div className="overview">{movie.overview}</div>
+            <div className="detail">
+              <div className="info">
+                <div className="score">⭐️ {movie.vote_average}</div>
+                <h1 className="title">{title}</h1>
+                <div className="release-date">
+                  {movie.release_date.slice(0, 4)}
+                </div>
+                <ul className="genres">
+                  {movie.genres.map((genre) => (
+                    <li key={genre.id}>{genre.name}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="overview">{movie.overview}</div>
+            </div>
           </div>
-        </div>
+          {images && (
+            // TODO add Design
+            <div>
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={`https://image.tmdb.org/t/p/w500${image.file_path}`}
+                />
+              ))}
+            </div>
+          )}
+        </>
       )}
       <style jsx>{`
         .container {
