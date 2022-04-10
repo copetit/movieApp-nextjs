@@ -24,7 +24,7 @@ export default function Home({ results }) {
       <style jsx>{`
         .container {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr;
           padding: 20px;
           gap: 20px;
         }
@@ -44,6 +44,17 @@ export default function Home({ results }) {
         .movie h4 {
           font-size: 18px;
           text-align: center;
+        }
+        
+        @media only screen and (min-width: 768px) {
+          .container {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+        @media only screen and (min-width: 1280px) {
+          .container {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          }
         }
       `}</style>
     </div>

@@ -113,39 +113,25 @@ export default function Detail({ params }) {
             z-index: 1;
           }
           .section {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             margin-top: 35px;
             z-index: 1;
           }
-          .movie-images {
-            position: relative;
-            display: grid;
-            place-items: center;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 10px;
-            z-index: 1;
+          .movie-images > img {
+            width: 100%;
+          }
+          .poster {
+            display: flex;
+            justify-content: center;
           }
           .poster img {
             width: 300px;
+            padding: 20px;
           }
           .info {
             margin-bottom: 50px;
           }
-          .detail {
-            display: flex;
-            flex-direction: column;
-            max-width: 50%;
-          }
           .score {
             font-size: 1.5em;
-          }
-          .title,
-          .score,
-          .genres,
-          .release-date {
             text-align: right;
           }
           .title {
@@ -153,6 +139,7 @@ export default function Detail({ params }) {
           }
           .genres {
             list-style: none;
+            padding: 0;
           }
           .genres {
             color: gray;
@@ -160,6 +147,41 @@ export default function Detail({ params }) {
           .overview {
             font-size: 20px;
             margin-top: 50px;
+          }
+
+          @media only screen and (min-width: 768px) {
+            .movie {
+              position: relative;
+              max-width: 80%;
+              margin: 0 auto;
+              z-index: 1;
+            }
+            .section {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-top: 35px;
+              z-index: 1;
+            }
+            .movie-images {
+              position: relative;
+              display: grid;
+              place-items: center;
+              grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+              gap: 10px;
+              z-index: 1;
+            }
+            .detail {
+              display: flex;
+              flex-direction: column;
+              max-width: 50%;
+            }
+            .title,
+            .genres,
+            .release-date {
+              text-align: right;
+            }
           }
         `}</style>
       </div>
