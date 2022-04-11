@@ -16,14 +16,14 @@ export default function NavBar() {
       <style jsx>
         {`
           nav {
-            background: black;
+            background: #f1be1e;
             padding: 20px;
           }
           .active {
-            color: #fac511;
+            color: #222;
           }
           nav a {
-            font-weight: 600;
+            font-weight: 800;
             font-size: 18px;
           }
           nav div {

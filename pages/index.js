@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import Seo from "../components/Seo";
 
@@ -23,6 +22,7 @@ export default function Home({ results }) {
       ))}
       <style jsx>{`
         .container {
+          background: #222;
           display: grid;
           grid-template-columns: 1fr;
           padding: 20px;
@@ -44,6 +44,7 @@ export default function Home({ results }) {
         .movie h4 {
           font-size: 18px;
           text-align: center;
+          color: white;
         }
 
         @media only screen and (min-width: 768px) {
@@ -54,6 +55,9 @@ export default function Home({ results }) {
         @media only screen and (min-width: 1280px) {
           .container {
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          }
+          .movie h4 {
+            font-size: 24px;
           }
         }
       `}</style>

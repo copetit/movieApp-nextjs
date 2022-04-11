@@ -72,6 +72,7 @@ export default function Detail({ params }) {
                   ))}
                 </div>
               )}
+              <div className="space" />
             </div>
           </>
         )}
@@ -80,6 +81,7 @@ export default function Detail({ params }) {
             position: relative;
             background: black;
             color: white;
+            overflow: hidden;
           }
           .container::after {
             position: absolute;
@@ -87,13 +89,13 @@ export default function Detail({ params }) {
             left: 0;
             display: block;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             content: "";
             background: linear-gradient(
               180deg,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0.47) 3.23%,
-              rgba(0, 0, 0, 0.73) 20.81%,
+              rgba(0, 0, 0, 0.3) 0%,
+              rgba(0, 0, 0, 0.37) 3.23%,
+              rgba(0, 0, 0, 0.73) 35.81%,
               rgba(0, 0, 0, 1) 60%,
               #000000 100%
             );
@@ -104,7 +106,6 @@ export default function Detail({ params }) {
           .bg-image {
             position: absolute;
             width: 100%;
-            top: 0;
           }
           .movie {
             position: relative;
@@ -168,9 +169,12 @@ export default function Detail({ params }) {
               position: relative;
               display: grid;
               place-items: center;
-              grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-              gap: 10px;
+              grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+              gap: 20px;
               z-index: 1;
+            }
+            .poster img {
+              width: 400px;
             }
             .detail {
               display: flex;
@@ -181,6 +185,9 @@ export default function Detail({ params }) {
             .genres,
             .release-date {
               text-align: right;
+            }
+            .score {
+              font-size: 2.5em;
             }
           }
         `}</style>
