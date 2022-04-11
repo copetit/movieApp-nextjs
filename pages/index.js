@@ -62,7 +62,6 @@ export default function Home({ results }) {
 }
 
 export async function getServerSideProps() {
-  console.log('fuga!')
   const { results } = await (
     await fetch("https://movie-app-nextjs-orpin.vercel.app/api/movies")
   ).json();
