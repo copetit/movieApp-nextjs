@@ -45,7 +45,7 @@ export default function Home({ results }) {
           font-size: 18px;
           text-align: center;
         }
-        
+
         @media only screen and (min-width: 768px) {
           .container {
             grid-template-columns: 1fr 1fr 1fr;
@@ -62,8 +62,9 @@ export default function Home({ results }) {
 }
 
 export async function getServerSideProps() {
+  console.log('fuga')
   const { results } = await (
-    await fetch("http://localhost:3030/api/movies")
+    await fetch("http://localhost:3000/api/movies")
   ).json();
   return {
     props: {
