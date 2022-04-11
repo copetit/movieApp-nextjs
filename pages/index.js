@@ -62,8 +62,9 @@ export default function Home({ results }) {
 }
 
 export async function getServerSideProps() {
+  const API_DOMAIN_URL = process.env.API_DOMAIN_URL;
   const { results } = await (
-    await fetch("https://movie-app-nextjs-orpin.vercel.app/api/movies")
+    await fetch(`${API_DOMAIN_URL}/api/movies`)
   ).json();
   return {
     props: {
