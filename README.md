@@ -2,6 +2,13 @@
 
 For Study Next.js
 
+## Vercel deployment URL
+https://movie-app-nextjs-orpin.vercel.app/
+
+## Tech Stack
+
+**Client:** Next.js, styled-jsx
+
 ## Setup
 
 ```bash
@@ -12,8 +19,11 @@ $ cp .env.sample .env
 
 $ npm install
 $ npm run dev
+
+# http://localhost:3030/
 ```
 
-## URL
+## License
 
-http://localhost:3030/
+[MIT](https://choosealicense.com/licenses/mit/)
+
