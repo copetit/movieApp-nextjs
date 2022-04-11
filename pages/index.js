@@ -62,7 +62,7 @@ export default function Home({ results }) {
 }
 
 export async function getServerSideProps() {
-  console.log('fuga')
+  console.log('fuga!')
   const { results } = await (
     await fetch("http://localhost:3000/api/movies")
   ).json();
