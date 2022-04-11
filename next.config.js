@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+module.exports = { target: "serverless" };
 
 const API_KEY = process.env.API_KEY;
 
