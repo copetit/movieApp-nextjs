@@ -19,7 +19,7 @@ https://movie-app-nextjs-orpin.vercel.app/
 $ cd movie-app-nextjs/
 $ cp .env.sample .env
 
-# ADD your Add your TMDB API Key in .env file
+# Add your TMDB API Key in .env file
 
 $ npm install
 $ npm run dev
